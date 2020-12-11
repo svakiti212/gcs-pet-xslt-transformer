@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>pet-poc-fonts</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.efx.batch</groupId>
+        <artifactId>gcs-pet-xslt-transformer</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.efx.pet.utility</groupId>
+            <artifactId>pet-utility-transformer-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.efx.pet.utility</groupId>
+            <artifactId>pet-utility-channel-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.efx.pet.domain.saas</groupId>
+            <artifactId>pet-domain-saas-credit-report</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.efx.pet.domain</groupId>
+            <artifactId>pet-domain-membercenter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.efx.pet.service.saas</groupId>
+            <artifactId>pet-service-saas-credit-report-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>fop</artifactId>
+        </dependency>
+
+    </dependencies>
+</project>

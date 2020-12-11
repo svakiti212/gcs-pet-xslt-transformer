@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<fop version="1.0">
+    <base>.</base>
+    <renderers>
+        <renderer mime="application/pdf">
+            <filterList>
+                <value>flate</value>
+            </filterList>
+            <fonts>
+                <font kerning="yes" embed-url="classpath:/font/calibri.ttf">
+                    <font-triplet name="Calibri" style="normal" weight="normal"/>
+                </font>
+                <font kerning="yes" embed-url="classpath:/font/calibrib.ttf">
+                    <font-triplet name="Calibri" style="normal" weight="bold"/>
+                </font>
+                <font kerning="yes" embed-url="classpath:/font/calibrii.ttf">
+                    <font-triplet name="Calibri" style="italic" weight="normal"/>
+                </font>
+            </fonts>
+        </renderer>
+    </renderers>
+</fop>
