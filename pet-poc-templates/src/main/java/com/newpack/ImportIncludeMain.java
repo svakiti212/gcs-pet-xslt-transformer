@@ -11,12 +11,15 @@ public class ImportIncludeMain {
   }
 
   public static void runXSLTTransformation(String sourceFileName, String destFileName) throws TransformerException, IOException {
-    Source xsltSrc = new StreamSource(new File(sourceFileName));
+    InputStream inputStreamStyle = ImportIncludeMain.class.getClassLoader().getResourceAsStream(sourceFileName);
+    Source xsltSrc = new StreamSource(inputStreamStyle);
     BufferedWriter out = new BufferedWriter(new FileWriter(destFileName));
     Result xsltDest = new StreamResult(new PrintWriter(out));
-
     Transformer transformerXSLT = TransformerFactory.newInstance().newTransformer(xsltSrc);
-    transformerXSLT.transform(xsltSrc, xsltDest);
+
+    InputStream inputStream = ImportIncludeMain.class.getClassLoader().getResourceAsStream(sourceFileName);
+    Source source = new StreamSource(inputStream);
+    transformerXSLT.transform(source, xsltDest);
   }
 
 }
