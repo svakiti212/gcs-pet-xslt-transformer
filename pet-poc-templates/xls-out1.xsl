@@ -8,7 +8,7 @@
 </fo:layout-master-set>
 <fo:page-sequence master-reference="normal">
 <fo:flow flow-name="xsl-region-body">
-<fo:block>Resolve-uri: Version of XSLT: 1.0</fo:block>
+<fo:block>Test import Resolve-uri: Version of XSLT: 1.0</fo:block>
 <fo:block>Test of xsl-1</fo:block>
 <fo:block page-break-before="always"/>
 <fo:block>Test of xsl-2</fo:block>

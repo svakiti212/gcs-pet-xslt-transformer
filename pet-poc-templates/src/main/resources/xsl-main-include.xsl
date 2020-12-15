@@ -2,9 +2,9 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format">
     <xsl:include
-            href="C:\Users\dxd316\Projects\test-import-xslt\src\main\resources\xsl-include-1.xsl"/>
+            href="C:\Users\dxd316\Projects\gcs-pet-xslt-transformer\pet-poc-templates\src\main\resources\xsl-1.xsl"/>
     <xsl:include
-            href="C:\Users\dxd316\Projects\test-import-xslt\src\main\resources\xsl-include-2.xsl"/>
+            href="C:\Users\dxd316\Projects\gcs-pet-xslt-transformer\pet-poc-templates\src\main\resources\xsl-2.xsl"/>
 
     <xsl:output method="xml" encoding="utf-8" indent="yes"/>
 
@@ -30,6 +30,7 @@
             <fo:page-sequence master-reference="normal">
                 <fo:flow flow-name="xsl-region-body">
                     <fo:block>
+                        <xsl:text>Test include </xsl:text>
                         <xsl:text>Version of XSLT: </xsl:text>
                         <xsl:value-of select="system-property('xsl:version')"/>
                     </fo:block>
