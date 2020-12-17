@@ -13,15 +13,17 @@ import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.net.URL;
 
 @Slf4j
 @RequiredArgsConstructor
 public class PdfGeneratorService {
-    private final String fopConfigFileName;
     private static final PetLogger LOGGER = PetLoggerFactory.getLogger(PdfGeneratorService.class);
+
+    private final String fopConfigFileName;
+    private final XslService xslService;
 
     public InputStream getPdfCreditReport(SubstrateContext substrateContext, CreditReport creditReport, String stylesheetName, boolean absolutePath) {
         InputStream cmsXslStream = getXslStylesheet(stylesheetName, absolutePath);
@@ -73,8 +75,7 @@ public class PdfGeneratorService {
         if (absolutePath) {
             return new FileInputStream(fileName);
         }
-        URL resource = getClass().getClassLoader().getResource(fileName);
-        return resource.openStream();
-
+        byte[] xlsBytes = xslService.resolveImportTags(fileName);
+        return new ByteArrayInputStream(xlsBytes);
     }
 }

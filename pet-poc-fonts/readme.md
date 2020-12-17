@@ -15,6 +15,10 @@ Parameters:
 To build project execute such command in terminal: `mvn clean install` and result jar will be located in **target** directory with name **xsltopdf.jar**
 Application use absolute paths to files. But if you want run it from IDE - you can use `com.efx.pet.batch.IdeRunner`, it uses templates from resource folder.
 
+`IdeRunner` supports template import. It uses `credit-report-1b-pdf-001.xsl` as an input and produces _**pdf file**_ of credit report.
+Template has few tags with import: `<pet:full-import/>`. The more detailed description of this tag located in **pet-poc-template** module.
+Before run you should execute `mvn clean install` from project root.
+
 ##How it works
 Application loads **xml** file and parse it into instance of CreditReport class.
 Then stylesheet (passed as **-xsl** argument) applied to credit report to produce result pdf (passed as **-pdf** argument) document.

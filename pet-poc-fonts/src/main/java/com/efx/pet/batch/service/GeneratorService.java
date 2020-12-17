@@ -28,7 +28,7 @@ public class GeneratorService {
         this.xmlReportFile = xmlReportFile;
         this.pdfFile = pdfFile;
         this.absolutePath = absolutePath;
-        this.pdfGeneratorService = new PdfGeneratorService(FOP_CONFIG_FILENAME);
+        this.pdfGeneratorService = new PdfGeneratorService(FOP_CONFIG_FILENAME,  new XslService());
     }
 
     private static SubstrateContext createContext() {
